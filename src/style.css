@@ -1,1 +1,9 @@
+h1{
+  font-size: 2xl;
+  font-weight: bold;
+}
 
+#counter{
+  background-color: "blue-300";
+  padding: 4;
+}
