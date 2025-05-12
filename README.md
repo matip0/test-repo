@@ -1,1 +1,1 @@
-Web technologies firts repo.
+Web technologies first repo.
