@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+h1{
+  font-weight: bold;
+  font-size: 2xl;
+}
+
+#count{
+  padding: 4;
+  background-color: "blue-300";
+}
