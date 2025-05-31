@@ -31,5 +31,5 @@ async function loadArticles(order = "") {
   });
   
   const articles = await response.json();
-  displayArticles(articles);
+  alert(articles);
 }
