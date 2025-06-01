@@ -23,13 +23,28 @@ document.querySelector('#app').innerHTML = `
 
 setupCounter(document.querySelector('#counter'))
 
-async function loadArticles(order = "") {
+async function articles(order = "") {
   const response = await fetch(`https://dpdcjreodtodlmkpswzg.supabase.co`, {
     headers: {
       apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRwZGNqcmVvZHRvZGxta3Bzd3pnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc2NTM2NjcsImV4cCI6MjA2MzIyOTY2N30.QcfK3LEaNubuocLxBEHAdjFtswc-brvLXHfYtFYBsY4',
     }
   });
-  
   const articles = await response.json();
-  alert(articles);
+  display(articles);
+}
+
+function display(articles) {
+  const articles_display = document.getElementById("articles");
+  container.innerHTML = "";
+  articles.forEach(article => {
+    const item = document.createElement("div");
+    item.innerHTML = `
+      <h2>${article.title}</h2>
+      <h3>${article.subtitle}</h3>
+      <p>${article.author} | ${formatDate(article.created_at)}</p>
+      <p>${article.content}</p>
+    `;
+
+    articles_display.appendChild(item);
+  });
 }
