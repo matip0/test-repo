@@ -34,17 +34,19 @@ async function articles(order = "") {
 }
 
 function display(articles) {
-  const articles_display = document.getElementById("body");
+  const articles_display = document.getElementById("articles");
   container.innerHTML = "";
   articles.forEach(article => {
     const item = document.createElement("div");
-    item.innerHTML = `
+    let item = '';
+    item+= `<div class ='article'
       <h2>${article.title}</h2>
       <h3>${article.subtitle}</h3>
       <p>${article.author} | ${formatDate(article.created_at)}</p>
       <p>${article.content}</p>
+      </div>
     `;
 
-    articles_display.appendChild(item);
+    
   });
 }
