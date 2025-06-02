@@ -37,7 +37,6 @@ function display(articles) {
   const articles_display = document.getElementById("articles");
   container.innerHTML = "";
   articles.forEach(article => {
-    const item = document.createElement("div");
     let item = '';
     item+= `<div class ='article'
       <h2>${article.title}</h2>
@@ -47,6 +46,6 @@ function display(articles) {
       </div>
     `;
 
-    
+    articles_display.innerHTML = item;
   });
 }
