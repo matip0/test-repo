@@ -34,7 +34,7 @@ async function articles(order = "") {
 }
 
 function display(articles) {
-  const articles_display = document.getElementById("articles");
+  const articles_display = document.getElementById("body");
   container.innerHTML = "";
   articles.forEach(article => {
     const item = document.createElement("div");
