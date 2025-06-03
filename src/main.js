@@ -55,3 +55,5 @@ function display(articles) {
     container.appendChild(articles_display);
   });
 }
+
+articles();
