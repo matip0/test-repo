@@ -49,7 +49,7 @@ function display(articles) {
     articles_display.innerHTML = `
       <h2>${article.title}</h2>
       <h3>${article.subtitle}</h3>
-      <p>${article.author} | ${formatDate(article.created_at)}</p>
+      <p>${article.author} | ${new Date(article.created_at)}</p>
       <p>${article.content}</p>
     `;
 
