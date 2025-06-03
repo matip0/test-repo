@@ -24,6 +24,7 @@ document.querySelector('#app').innerHTML = `
 setupCounter(document.querySelector('#counter'))
 
 async function articles(order = "") {
+  console.log('loading articles')
   const response = await fetch(`https://dpdcjreodtodlmkpswzg.supabase.co`, {
     method: 'GET',
     headers: {
@@ -31,6 +32,7 @@ async function articles(order = "") {
     }
   });
   const articles = await response.json();
+  console.log(articles)
   await display(articles);
 }
 
