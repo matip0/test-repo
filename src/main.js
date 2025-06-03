@@ -37,7 +37,7 @@ async function articles(order = "") {
 function display(articles) {
 
   const container = document.querySelector('#articles')
-  container = ''
+  container.innerHTML = ''
   
   articles.forEach(article => {
     const articles_display = document.createElement('div');
