@@ -36,7 +36,7 @@ async function articles(order = "") {
 
 function display(articles) {
 
-  const container = document.getElementByID('articles')
+  const container = document.querySelector('#articles')
   container = ''
   
   articles.forEach(article => {
