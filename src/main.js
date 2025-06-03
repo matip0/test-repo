@@ -25,27 +25,31 @@ setupCounter(document.querySelector('#counter'))
 
 async function articles(order = "") {
   const response = await fetch(`https://dpdcjreodtodlmkpswzg.supabase.co`, {
+    method: 'GET',
     headers: {
       apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRwZGNqcmVvZHRvZGxta3Bzd3pnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc2NTM2NjcsImV4cCI6MjA2MzIyOTY2N30.QcfK3LEaNubuocLxBEHAdjFtswc-brvLXHfYtFYBsY4',
     }
   });
   const articles = await response.json();
-  display(articles);
+  await display(articles);
 }
 
 function display(articles) {
-  const articles_display = document.getElementById("articles");
-  container.innerHTML = "";
+
+  const container = document.getElementByID('articles')
+  container = ''
+  
   articles.forEach(article => {
-    let item = '';
-    item+= `<div class ='article'
+    const articles_display = document.createElement('div');
+    articles_display.classList.add('article');
+    
+    articles_display.innerHTML = `
       <h2>${article.title}</h2>
       <h3>${article.subtitle}</h3>
       <p>${article.author} | ${formatDate(article.created_at)}</p>
       <p>${article.content}</p>
-      </div>
     `;
 
-    articles_display.innerHTML = item;
+    container.appendChild(articles_display);
   });
 }
